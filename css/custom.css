@@ -1,6 +1,7 @@
 #fold {
   position: relative;
   min-height: 100vh;
+  min-width: 100vw;
   background: center/cover no-repeat url("../img/in-liquid-slide-bg.png"); }
 
 #main-nav {
@@ -23,6 +24,18 @@
   min-width: 100vw;
   background: #212224;
   background: linear-gradient(0deg, #212224 23%, rgba(33, 34, 36, 0.908023) 37%, rgba(33, 34, 36, 0.888415) 56%, rgba(33, 34, 36, 0.742756) 76%, rgba(33, 34, 36, 0.3506) 100%, rgba(33, 34, 36, 0.812784) 100%); }
+
+.percent-format {
+  font-weight: 200; }
+
+#calculator h4, #calculator .h4 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 34px; }
+
+.dropdown-menu {
+  height: 50px;
+  overflow: auto; }
 
 /*!
  * Bootstrap v5.1.2 (https://getbootstrap.com/)

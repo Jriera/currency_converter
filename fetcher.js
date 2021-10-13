@@ -12,18 +12,29 @@ const getExchangeRateLast = async (base_currency, output_currency) => {
 }
 
 const getExchangeRateChange = async (base_currency, output_currency) => {
-    const response = await axios.get(`https://exchange-rates-reuters.herokuapp.com/pairs?from=${base_currency}&to=${output_currency}`);
+    const response = await axios.get(`https://reuters-exchange-rates.p.rapidapi.com/pairs?from=${base_currency}&to=${output_currency}`, {
+        headers: {
+            'x-rapidAPI-key': '7c2325863fmsh926e1d461bb15fep19aaeajsnb37c76192724'
+        }
+    });
     const data = response.data
     const change = response.data.currencypairs[0].percent_change
 
     console.log(change);
-    console.log(data);
+
     return change;
 }
 const changePrinter = async (id, from, to) => {
     const element = document.getElementById(id)
     const pair_change = await getExchangeRateChange(from, to);
-    element.innerHTML = `${from}/${to}: ${pair_change}%`
+    if (pair_change > 0) {
+        element.innerHTML = `<span class="text-warning">${from}/${to}</span>:<span class="ms-2 percent-forma bg-success rounded p-1">${pair_change}%</span> `
+    }
+
+    else if (pair_change < 0) {
+        element.innerHTML = `<span class="text-warning">${from}/${to}</span>:<span class="ms-2 percent-forma bg-danger rounded p-1">${pair_change}%</span> `
+    }
+
     console.log(pair_change);
 }
 
@@ -31,6 +42,7 @@ changePrinter('eur-usd', 'EUR', 'USD');
 changePrinter('usd-jpy', 'USD', 'JPY');
 changePrinter('gbp-eur', 'GBP', 'EUR');
 changePrinter('cad-usd', 'CAD', 'USD');
+changePrinter('eur-chf', 'EUR', 'CHF');
+changePrinter('aud-usd', 'AUD', 'USD');
 
 
-/* https://cors-anywhere.herokuapp.com/ */
