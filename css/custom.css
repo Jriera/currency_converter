@@ -1,7 +1,7 @@
 #fold {
   position: relative;
   min-height: 100vh;
-  background: center/cover no-repeat url("/img/in-liquid-slide-bg.png"); }
+  background: center/cover no-repeat url("./img/in-liquid-slide-bg.png"); }
 
 #main-nav {
   font-family: 'Inter', sans-serif; }
