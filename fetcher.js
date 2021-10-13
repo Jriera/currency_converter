@@ -12,7 +12,7 @@ const getExchangeRateLast = async (base_currency, output_currency) => {
 }
 
 const getExchangeRateChange = async (base_currency, output_currency) => {
-    const response = await axios.get(`https://cors-anywhere.herokuapp.com/https://exchange-rates-reuters.herokuapp.com/pairs?from=${base_currency}&to=${output_currency}`);
+    const response = await axios.get(`https://exchange-rates-reuters.herokuapp.com/pairs?from=${base_currency}&to=${output_currency}`);
     const data = response.data
     const change = response.data.currencypairs[0].percent_change
 
@@ -33,3 +33,4 @@ changePrinter('gbp-eur', 'GBP', 'EUR');
 changePrinter('cad-usd', 'CAD', 'USD');
 
 
+/* https://cors-anywhere.herokuapp.com/ */
