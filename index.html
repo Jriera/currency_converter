@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <title>Exchange Converter</title>
+</head>
+
+<body class="">
+    
+   <section id="fold" class="col-12 bg-dark">
+    <div class="container" id="main-nav">
+        <nav class="navbar navbar-expand-lg navbar-dark pt-6">
+            <a href="#" class="navbar-brand">
+                <img class="px-3 p-sm-0 me-2" src="img/logoexchange.png" alt="insure-logo" width="30" height="30">ExchangeRate</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toggleMobileMenu"
+                aria-controls="toggleMobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+        
+              <div class="collapse navbar-collapse small-menu" id="toggleMobileMenu">
+                <ul class="navbar-nav ms-auto text-center pt-sm-0 pt-5">
+                  <li><a href="#" class="nav-link active px-3">Home</a></li>
+                  <li><a href="#" class="nav-link px-3">Exchange Rates</a></li>
+                  <li><a href="#" class="nav-link px-3">Get API</a></li>
+                  <li><a href="#" class="nav-link px-3">Account</a></li>
+                  <li><a href="#" class="nav-link px-3">View Plans</a></li>
+                  
+                </ul>
+              </div>
+        </nav>
+    </div>
+    <div class="container mt-8">
+        <div class="row col-12 d-flex align-items-center">
+            <div class="col-6"> 
+                <h3 class="text-white">Live Fiat Currency Rates Updates</h3>
+                <p class="text-light">Best data about currency exchange. Get latest values, bid and ask rates.
+                    If you need more we have you covered, we can provide you YTD high, YTD low and more 
+                </p>
+            </div>
+            <img class="col-6" src="img/in-liquid-slide-1.svg" alt="">
+        </div>
+    </div>
+    <div id="pairs-strip">
+        <div class="container">
+            <div class=" col-12 pair-changes d-flex align-items-center flex-row ">
+                <h6 class="text-white " id="eur-usd"></h6>
+                <h6 class="text-white " id="usd-jpy"></h6>
+                <h6 class="text-white " id="gbp-eur"></h6>
+                <h6 class="text-white" id="cad-usd"></h6>
+            </div>
+        </div>
+    </div>
+   </section>
+   <script src="fetcher.js"></script>
+
+</body>
+
+</html>
