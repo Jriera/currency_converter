@@ -6,3 +6,4 @@ const getExchangeRateLast = async (base_currency, output_currency) => {
     console.log(data);
     return last;
 }
+
