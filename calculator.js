@@ -13,6 +13,7 @@ const input = document.getElementById('input-amount');
 const output = document.getElementById('output-amount');
 const from = document.getElementById('from');
 const to = document.getElementById('to');
+const swapper = document.getElementById('swapper');
 
 from.addEventListener('change', async () => {
     const inputAmount = input.value;
@@ -49,3 +50,18 @@ input.addEventListener('focusout', async () => {
     console.log(output.value);
 })
 
+swapper.addEventListener('click', async () => {
+    const inputAmount = input.value;
+    const outputAmount = output.value;
+    const from_currency = from.value;
+    const to_currency = to.value;
+
+
+    const holder = from_currency;
+    const holder2 = to_currency;
+
+    to.value = holder;
+    from.value = holder2;
+    const rate = await getExchangeRateLast(holder2, holder);
+    output.value = inputAmount * rate;
+})
