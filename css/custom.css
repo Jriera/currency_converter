@@ -10,7 +10,8 @@
 #fold h3, #fold .h3 {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 50px; }
+  font-size: 50px; 
+}
 
 #fold p {
   font-family: 'Inter', sans-serif; }
@@ -36,6 +37,16 @@
 .dropdown-menu {
   height: 50px;
   overflow: auto; }
+
+#second-block {
+  min-height: 100vh; 
+}
+
+#second-block h3{
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 34px; 
+}
 
 #swapper {
   height: 38px; }

@@ -66,7 +66,7 @@
         </div>
     </div>
    </section>
-   <section class="container pt-5">
+   <section class="container pt-5" id="second-block">
        <div id="calculator" class="col-12 mb-5">
            <h4 class="text-dark text-center ">Our Currency  <span class="text-warning">Calculator</span></h3>
        </div>
@@ -187,10 +187,55 @@
                 <option class='dropdown-item'value="USD">USD</option>
             </select>
           </div>
+      </div> 
+      <div class="row">
+          <div class="col-6">
+              <h3>Get the most updated Bid and Ask prices</h3>
+          </div>
+          <div class="col-6">
+            <div class="col-11 rounded border">
+                <div class="row ">
+                    <div class="d-flex flex-row justify-content-between">
+                        <p>Symbol</p>
+                        <p>Bid</p>
+                        <p>Ask</p>
+                        <p>Spread</p>
+                    </div>
+                    <div class="d-flex flex-row justify-content-between">
+                        <p>EURUSD</p>
+                        <p id="EURUSD-bid">Bid</p>
+                        <p id="EURUSD-ask">Ask</p>
+                        <p id="EURUSD-spread">Spread</p>
+                    </div>
+                    <div class="d-flex flex-row justify-content-between">
+                        <p>GBPUSD</p>
+                        <p id="GBPUSD-bid">Bid</p>
+                        <p id="GBPUSD-ask">Ask</p>
+                        <p id="GBPUSD-spread">Spread</p>
+                    </div>
+                    <div class="d-flex flex-row justify-content-between">
+                        <p>EURCHF</p>
+                        <p id="EURCHF-bid">Bid</p>
+                        <p id="EURCHF-ask">Ask</p>
+                        <p id="EURCHF-spread">Spread</p>
+                    </div>
+                    <div class="d-flex flex-row justify-content-between">
+                        <p>USDJPY</p>
+                        <p id="USDJPY-bid">Bid</p>
+                        <p id="USDJPY-ask">Ask</p>
+                        <p id="USDJPY-spread">Spread</p>
+                    </div>
+
+                </div>
+            </div>
+          </div>
       </div>
+
+
    </section>
    <script src="fetcher.js"></script>
    <script src="calculator.js"></script>
+   <script src="table.js"></script>
    
 
 </body>
