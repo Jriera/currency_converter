@@ -27,3 +27,25 @@ from.addEventListener('change', async () => {
 
 })
 
+to.addEventListener('change', async () => {
+    const inputAmount = input.value;
+    const outputAmount = output.value;
+    const from_currency = from.value;
+    const to_currency = to.value;
+
+    const rate = await getExchangeRateLast(from_currency, to_currency);
+    output.value = inputAmount * rate;
+    console.log(output.value);
+})
+
+input.addEventListener('focusout', async () => {
+    const inputAmount = input.value;
+    const outputAmount = output.value;
+    const from_currency = from.value;
+    const to_currency = to.value;
+
+    const rate = await getExchangeRateLast(from_currency, to_currency);
+    output.value = inputAmount * rate;
+    console.log(output.value);
+})
+
