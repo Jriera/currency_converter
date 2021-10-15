@@ -16,21 +16,58 @@ const getExchangeRateAsk = async (base_currency, output_currency) => {
     return ask;
 }
 const pricePrinter = async (id, price, from, to) => {
+
     if (price === 'bid') {
-        document.getElementById(`${id}-bid`).innerHTML = await getExchangeRateBid(from, to)
+        document.getElementById(`${id}-bid`).innerHTML = await getExchangeRateBid(from, to);
+
+        const valuer = async () => {
+            const value = document.getElementById(`${id}-bid`).innerHTML;
+            console.log(value)
+            return value
+        }
+        const realvalue = await valuer()
+        return realvalue;
+
     }
 
     else if (price === 'ask') {
         document.getElementById(`${id}-ask`).innerHTML = await getExchangeRateAsk(from, to)
+        const valuer = async () => {
+            const value = document.getElementById(`${id}-bid`).innerHTML;
+            console.log(value)
+            return value
+        }
+        const realvalue = await valuer()
+        return realvalue;
+
     }
 
 }
+const printer = async () => {
+    await pricePrinter('EURUSD', 'bid', 'EUR', 'USD');
+    await pricePrinter('EURUSD', 'ask', 'EUR', 'USD');
+    await pricePrinter('GBPUSD', 'bid', 'GBP', 'USD');
+    await pricePrinter('GBPUSD', 'ask', 'GBP', 'USD');
+    await pricePrinter('EURCHF', 'bid', 'EUR', 'CHF');
+    await pricePrinter('EURCHF', 'ask', 'EUR', 'CHF');
+    await pricePrinter('USDJPY', 'bid', 'USD', 'JPY');
+    await pricePrinter('USDJPY', 'ask', 'USD', 'JPY');
 
-pricePrinter('EURUSD', 'bid', 'EUR', 'USD');
-pricePrinter('EURUSD', 'ask', 'EUR', 'USD');
-pricePrinter('GBPUSD', 'bid', 'GBP', 'USD');
-pricePrinter('GBPUSD', 'ask', 'GBP', 'USD');
-pricePrinter('EURCHF', 'bid', 'EUR', 'CHF');
-pricePrinter('EURCHF', 'ask', 'EUR', 'CHF');
-pricePrinter('USDJPY', 'bid', 'USD', 'JPY');
-pricePrinter('USDJPY', 'ask', 'USD', 'JPY');
+    spreader('EURUSD');
+    spreader('GBPUSD');
+    spreader('EURCHF');
+    spreader('USDJPY');
+}
+
+
+const spreader = async (pair) => {
+    const test1 = document.getElementById(`${pair}-ask`).innerHTML
+    const test2 = document.getElementById(`${pair}-bid`).innerHTML
+
+    console.log(test1);
+    console.log(test2);
+    document.getElementById(`${pair}-spread`).innerHTML = (test1 - test2).toFixed(4);
+}
+
+
+printer();
